@@ -1,0 +1,59 @@
+/* WorkoutPlan.module.css */
+/* App.css (or any suitable CSS file that wraps your WorkoutPlan component) */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this value if needed */
+}
+
+/* Include the WorkoutPlan styles */
+.workoutPlan {
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center; /* Center align content */
+  font-size: 22px; /* Increase text size */
+  
+}
+
+  
+  .day {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 25px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .exerciseTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .exerciseTable th,
+  .exerciseTable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .exerciseTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .exerciseName {
+    font-weight: bold;
+    
+  }
+  
+  .exerciseDetails {
+    color: #666;
+    font-size: 14px;
+  }

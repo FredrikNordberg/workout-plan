@@ -1,26 +1,27 @@
+// App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Routes
+import Navbar from './components/Navbar';
+import WorkoutPlan from './components/WorkoutPlan';
+import { workoutPlans } from './components/data'; // Assuming workoutPlans are exported from data file
 
-function App() {
+const App: React.FC = () => {
+  const daysOfWeek = workoutPlans.map((plan) => plan.day);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navbar days={daysOfWeek} />
+        <Routes> {/* Wrap Routes around Route components */}
+          {workoutPlans.map((plan, index) => (
+            <Route key={index} path={`/${plan.day.toLowerCase()}`} element={<WorkoutPlan day={plan.day} workout={plan.workout} />} />
+          ))}
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
+
+
